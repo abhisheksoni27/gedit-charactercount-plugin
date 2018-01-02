@@ -1,8 +1,3 @@
-"""
-A gedit plugin which adds a Label to the status bar with the active documents 
-wordcount, where a word is definied as r"[a-zA-Z0-9]+[a-zA-Z0-9\-']*\s?"
-"""
-
 import re
 from gi.repository import GObject, Gtk, Gedit # pylint: disable=E0611
 
@@ -14,7 +9,7 @@ def get_text(doc):
     return doc.get_text(start, end, False)
 
 class CharcountPlugin(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "wordcount"
+    __gtype_name__ = "charcount"
     window = GObject.property(type=Gedit.Window)
     
     def __init__(self):
@@ -53,5 +48,5 @@ class CharcountPlugin(GObject.Object, Gedit.WindowActivatable):
     def update_label(self, doc):
         """update the plugins status bar label"""
         txt = get_text(doc)
-        msg = 'words: {0}'.format(len(CHAR_RE.findall(txt)))
+        msg = 'characters: {0}'.format(len(CHAR_RE.findall(txt)))
         self._label.set_text(msg)
