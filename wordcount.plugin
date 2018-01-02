@@ -1,9 +1,9 @@
 [Plugin]
 Loader=python3
-Module=wordcount
+Module=charcount
 IAge=3
-Name=Wordcount
-Description=Shows Wordcount in Statusbar
-Authors=Jonathan Butcher <footley@gmail.com>
-Copyright=Copyright © 2012 Jonathan Butcher <footley@gmail.com>
-Website=https://github.com/footley/gedit-wordcount-plugin
+Name=Charcount
+Description=Shows Charcount in Statusbar
+Authors=Abhishek Soni <abhishek@codeprose.me>
+Copyright=Copyright © 2017 Abhishek Soni <abhishek@codeprose.me>
+Website=https://github.com/abhisheksoni27/gedit-charactercount-plugin
