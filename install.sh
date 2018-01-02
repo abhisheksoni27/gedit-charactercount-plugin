@@ -9,8 +9,8 @@ if [ ! -d ~/.local/share/gedit/plugins ]; then
 fi
 
 echo remove any old version
-rm ~/.local/share/gedit/plugins/wordcount.*
+rm ~/.local/share/gedit/plugins/charcount.*
 
 echo copy plugin files
-cp wordcount.plugin ~/.local/share/gedit/plugins/
-cp wordcount.py ~/.local/share/gedit/plugins/
+cp charcount.plugin ~/.local/share/gedit/plugins/
+cp charcount.py ~/.local/share/gedit/plugins/
