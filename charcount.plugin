@@ -4,6 +4,6 @@ Module=charcount
 IAge=3
 Name=Charcount
 Description=Shows Charcount in Statusbar
-Authors=Abhishek Soni <abhishek@codeprose.me>
+Authors=Jonathan Butcher <footley@gmail.com>
 Copyright=Copyright © 2017 Abhishek Soni <abhishek@codeprose.me>
 Website=https://github.com/abhisheksoni27/gedit-charactercount-plugin
