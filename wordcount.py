@@ -6,18 +6,14 @@ wordcount, where a word is definied as r"[a-zA-Z0-9]+[a-zA-Z0-9\-']*\s?"
 import re
 from gi.repository import GObject, Gtk, Gedit # pylint: disable=E0611
 
-WORD_RE = re.compile(r"[a-zA-Z0-9]+[a-zA-Z0-9\-']*\s?")
+CHAR_RE = re.compile(r"[a-zA-Z0-9\&]\s?")
 
 def get_text(doc):
     """Return the full text of the document"""
     start, end = doc.get_bounds()
     return doc.get_text(start, end, False)
 
-class WordcountPlugin(GObject.Object, Gedit.WindowActivatable):
-    """
-    Adds a Label to the status bar with the active documents wordcount, 
-    where a word is definied as r"[a-zA-Z0-9]+[a-zA-Z0-9\-']*\s?"
-    """
+class CharcountPlugin(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "wordcount"
     window = GObject.property(type=Gedit.Window)
     
@@ -57,5 +53,5 @@ class WordcountPlugin(GObject.Object, Gedit.WindowActivatable):
     def update_label(self, doc):
         """update the plugins status bar label"""
         txt = get_text(doc)
-        msg = 'words: {0}'.format(len(WORD_RE.findall(txt)))
+        msg = 'words: {0}'.format(len(CHAR_RE.findall(txt)))
         self._label.set_text(msg)
