@@ -1,7 +1,7 @@
 import re
 from gi.repository import GObject, Gtk, Gedit # pylint: disable=E0611
 
-CHAR_RE = re.compile(r"[a-zA-Z0-9\&]\s?")
+CHAR_RE = re.compile(r"[a-zA-Z0-9\&\(\)\.\"\'\]\[\-\_\*\+\!\@\%\^\\s]?")
 
 def get_text(doc):
     """Return the full text of the document"""
